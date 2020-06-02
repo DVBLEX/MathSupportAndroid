@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.company.lab.MainActivity">
+
+    <TextView
+        android:id="@+id/main_expert_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Експерти"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/main_scores_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Оцінки"
+        android:textSize="22sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/main_expert_count_picker"
+        app:layout_constraintTop_toBottomOf="@id/main_expert_title" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_input_recycler"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/main_scores_count_title"
+        app:layout_constraintTop_toBottomOf="@id/main_scores_title"
+        tools:layout_height="200dp"
+        tools:listitem="@layout/item_input" />
+
+    <TextView
+        android:id="@+id/main_scores_count_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:text="Кількість\nоцінок"
+        android:textSize="22sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_expert_title" />
+
+    <NumberPicker
+        android:id="@+id/main_expert_count_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/main_input_recycler"
+        app:layout_constraintLeft_toLeftOf="@id/main_scores_count_title"
+        app:layout_constraintRight_toRightOf="@id/main_scores_count_title"
+        app:layout_constraintTop_toBottomOf="@id/main_scores_count_title" />
+
+    <Button
+        android:id="@+id/main_calculate_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Обчислити"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_input_recycler" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_iteration_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_calculate_button" />
+
+</android.support.constraint.ConstraintLayout>
